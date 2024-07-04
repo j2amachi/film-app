@@ -1,8 +1,6 @@
 package com.amachi.app.film.entities;
 
 import jakarta.persistence.*;
-import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.NotNull;
 import lombok.*;
 
 import java.io.Serial;
@@ -31,11 +29,11 @@ public class Film implements Model {
     @Column(name = "DESCRIPTION", length = 255)
     private String description;
 
-    @ManyToMany
+    @ManyToMany(cascade = CascadeType.PERSIST, fetch = FetchType.LAZY)
     @JoinTable(
             name = "FILM_ACTEUR",
-            joinColumns = @JoinColumn(name = "film_id"),
-            inverseJoinColumns = @JoinColumn(name = "acteur_id")
+            joinColumns = @JoinColumn(name = "film_id", referencedColumnName = "id"),
+            inverseJoinColumns = @JoinColumn(name = "acteur_id", referencedColumnName = "id")
     )
     private List<Acteur> acteurs = new ArrayList<>();
 

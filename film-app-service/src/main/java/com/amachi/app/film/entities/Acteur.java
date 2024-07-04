@@ -1,9 +1,6 @@
 package com.amachi.app.film.entities;
 
 import jakarta.persistence.*;
-import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.NotNull;
-import jakarta.validation.constraints.Size;
 import lombok.*;
 
 import java.io.Serial;
@@ -32,6 +29,6 @@ public class Acteur  implements Model {
     @Column(name = "PRENOM", length = 50)
     private String prenom;
 
-    @ManyToMany(mappedBy = "acteurs")
+    @ManyToMany(mappedBy = "acteurs", fetch = FetchType.LAZY)
     private List<Film> films = new ArrayList<>();
 }
