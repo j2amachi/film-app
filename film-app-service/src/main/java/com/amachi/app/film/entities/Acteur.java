@@ -6,6 +6,7 @@ import lombok.*;
 import java.io.Serial;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
 
 @Data
 @AllArgsConstructor
@@ -30,5 +31,5 @@ public class Acteur  implements Model {
     private String prenom;
 
     @ManyToMany(mappedBy = "acteurs", fetch = FetchType.LAZY)
-    private List<Film> films = new ArrayList<>();
+    private Set<Film> films;
 }

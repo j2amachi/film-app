@@ -6,6 +6,7 @@ import lombok.*;
 import java.io.Serial;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
 
 @Data
 @AllArgsConstructor
@@ -35,6 +36,6 @@ public class Film implements Model {
             joinColumns = @JoinColumn(name = "film_id", referencedColumnName = "id"),
             inverseJoinColumns = @JoinColumn(name = "acteur_id", referencedColumnName = "id")
     )
-    private List<Acteur> acteurs = new ArrayList<>();
+    private Set<Acteur> acteurs;
 
 }

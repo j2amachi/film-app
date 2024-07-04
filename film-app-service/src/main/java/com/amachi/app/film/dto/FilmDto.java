@@ -12,6 +12,7 @@ import org.springframework.validation.annotation.Validated;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
 
 @Validated
 @Data
@@ -42,5 +43,5 @@ public class FilmDto {
     @Schema(
             description = "Liste des acteurs qui ont le film"
     )
-    private List<ActeurDto> acteurs = new ArrayList<>();
+    private Set<ActeurDto> acteurs;
 }
