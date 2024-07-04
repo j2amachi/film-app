@@ -15,5 +15,5 @@ public interface ActeurRepository extends JpaRepository<Acteur, Long>, JpaSpecif
         return findAll(new ActeurSpecification(acteurSearchDto), pageable);
     }
 
-    Page<Acteur> findByTitreLike(String titre, Pageable pageable);
+    Page<Acteur> findByNomLike(String nom, Pageable pageable);
 }

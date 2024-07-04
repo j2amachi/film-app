@@ -19,6 +19,7 @@ import java.util.List;
 import java.util.Optional;
 
 import static com.google.common.base.Preconditions.checkNotNull;
+
 @RequiredArgsConstructor
 @Service
 public class ActeurServiceImpl implements ActeurService {
