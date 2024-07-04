@@ -39,5 +39,5 @@ public class ActeurDto {
     @Schema(
             description = "Liste des films où participe l'acteur "
     )
-    private List<Film> films = new ArrayList<>();
+    private List<FilmDto> films = new ArrayList<>();
 }
