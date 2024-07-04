@@ -29,7 +29,7 @@ public interface FilmApi {
                     @ApiResponse(responseCode = "500", description = "The server did not respond")
             })
     @GetMapping(value = "/films/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
-    ResponseEntity<FilmDto> getFilm(@Parameter(required = true) @PathVariable("id") Integer idFilm);
+    ResponseEntity<FilmDto> getFilm(@Parameter(required = true) @PathVariable("id") Long idFilm);
 
     @Operation(
             summary = "Create a Film",
@@ -58,7 +58,7 @@ public interface FilmApi {
                     @ApiResponse(responseCode = "500", description = "The server did not respond")
             })
     @PutMapping(value = "/films/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
-    ResponseEntity<FilmDto> updateFilm(@Parameter(description = "Update Film", required = true) @PathVariable("id") Integer idFilm, @Valid @RequestBody FilmDto filmDTO);
+    ResponseEntity<FilmDto> updateFilm(@Parameter(description = "Update Film", required = true) @PathVariable("id") Long idFilm, @Valid @RequestBody FilmDto filmDTO);
 
     @Operation(
             summary = "Delete Film",
@@ -73,7 +73,7 @@ public interface FilmApi {
                     @ApiResponse(responseCode = "500", description = "The server did not respond")
             })
     @DeleteMapping(value = "/films/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
-    ResponseEntity<Object> deleteFilm(@Parameter(description = "Delete objet Film", required = true) @PathVariable("id") Integer idFilm);
+    ResponseEntity<Object> deleteFilm(@Parameter(description = "Delete objet Film", required = true) @PathVariable("id") Long idFilm);
 
     @Operation(
             summary = "Retrieve all Films",

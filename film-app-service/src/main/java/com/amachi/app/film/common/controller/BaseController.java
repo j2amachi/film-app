@@ -10,7 +10,7 @@ import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
 
-@RequestMapping("/medical")
+@RequestMapping("/api/")
 
 public abstract class BaseController<T> {
 
